@@ -1,3 +1,3 @@
 FROM almalinux:9
-ENV MONGOURL="mongodg.advidevops.online"
+ENV MONGOURL="mongodg.advidevops.online"\
     MONGOUSER="varun"
