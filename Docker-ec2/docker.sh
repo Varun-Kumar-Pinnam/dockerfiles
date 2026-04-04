@@ -17,4 +17,7 @@ sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 # Start Docker
 sudo systemctl enable --now docker
 
+#Add user to docker group
+sudo usermod -aG docker ec2-user
+
 echo "Completed"
