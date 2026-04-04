@@ -20,4 +20,6 @@ sudo systemctl enable --now docker
 #Add user to docker group
 sudo usermod -aG docker ec2-user
 
+sudo -u ec2-user git clone https://github.com/Varun-Kumar-Pinnam/dockerfiles.git
+
 echo "Completed"
