@@ -20,6 +20,11 @@ sudo systemctl enable --now docker
 #Add user to docker group
 sudo usermod -aG docker ec2-user
 
-sudo -u ec2-user git clone https://github.com/Varun-Kumar-Pinnam/dockerfiles.git
+# Switch to ec2-user properly
+sudo su - ec2-user
+
+# Clone repo
+git clone https://github.com/Varun-Kumar-Pinnam/roboshop-docker.git
+
 
 echo "Completed"
