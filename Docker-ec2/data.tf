@@ -9,3 +9,6 @@ data "aws_ami" "main" {
 
 }
 
+data "aws_iam_role" "eks" {
+  name = "ec2-admin-role"
+}

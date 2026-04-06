@@ -2,6 +2,7 @@ resource "aws_instance" "bastion" {
   ami                    = local.ami_id
   instance_type          = "t3.micro"
   vpc_security_group_ids = [local.sg_id]
+  iam_instance_profile = aws_iam_instance_profile.eks.name
   user_data              = file("docker.sh")
 
   root_block_device {
@@ -20,5 +21,11 @@ resource "aws_instance" "bastion" {
       Name = "Docker"
     }
     
+}
+
+# Create an Instance Profile (Only for EC2)
+resource "aws_iam_instance_profile" "eks" {
+  name = "eks"
+  role = local.iam_role
 }
 
